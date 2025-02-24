@@ -1,0 +1,65 @@
+body {
+    background-color: #85c7ee;
+  }
+  
+  .content-area {
+    width: 20%;
+    margin: 0;
+  }
+
+  .box1 {
+    background-color: rgb(119, 48, 189);
+    float: left;
+    width: 45%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 7px;
+    margin: 5px;
+  }
+
+  a.no-underline {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .box2 {
+    background-color:rgb(119, 48, 189);
+    float: left;
+    width: 45%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 7px;
+    margin: 5px;
+  }
+
+  .box3 {
+    background-color: rgb(119, 48, 189);
+    float: left;
+    width: 45%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 7px;
+    margin: 5px;
+  }
+
+  .box4 {
+    background-color: rgb(119, 48, 189);
+    float: left;
+    width: 45%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 7px;
+    margin: 5px;
+  }
+
+  form[name="contactForm1"], [name="contactForm2"] {
+    display: flex;
+    align-items: center;
+  }
+
+  form[name="contactForm1"] input[type="text"] {
+    margin-right: 5px;
+  }
+  form[name="contactForm2"] input[type="text"] {
+    margin-right: 5px;
+  }

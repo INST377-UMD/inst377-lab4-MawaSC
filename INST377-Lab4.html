@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <title>INST377 - Lab 4</title>
+    <link rel="stylesheet" href="INST377-Lab4.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="headerText">
+        <h1>INST377 - Lab 4</h1>
+    </header>
+
+    <!-- Main text Area -->
+    <div class="main-container">
+        <div class="box1">
+            <form name="contactForm1" onsubmit="return userName()">
+                <label for="firstName">Name:</label>
+                <input type="text" placeholder="John" id="firstName1" required>
+                <br>
+                <input type="submit" value="Alert Me!">
+            </form>
+        </div>
+        
+        <div class="box2">
+            <button id="background" onclick="changeColor()">Change Color</button>
+        </div>
+
+        <div class="box3">
+            <button id="addTextButton" onclick="changeHeader()">Add Text</button>
+        </div>
+
+        <div class="box4">
+            <form name="contactForm2" onsubmit="return formValidation()">
+                <label for="firstName">Text Tester:</label>
+                <input type="text" placeholder="John" id="firstName2" required>
+                <br>
+                <input type="submit" value="Validate Text!"> 
+            </form>
+        
+        </div>
+    </div>
+
+     <!-- Javascript Code for Box 1 -->
+     <script type="text/javascript">
+        function userName() {
+            console.log('Validating user input:', document.contactForm1.firstName1.value)
+            var name = document.getElementById('firstName1').value;
+            alert('Hello ' + name + '!');
+            return true;
+        }
+
+    /*Javascript Code for Box 2*/
+        function changeColor() {
+            console.log('Attempting to change background color, current color is: ', document.body.style.background)
+            let currentColor = getComputedStyle(document.body).backgroundColor;
+
+            if (currentColor == "rgb(133, 199, 238)") {
+                document.body.style.backgroundColor = "#58c16b";
+            } else {
+                document.body.style.backgroundColor = "#85c7ee";
+            }
+
+            console.log('Successfully changed color of text, new color is: ', document.body.style.background)
+        }
+
+    /*Javascript Code for Box 3*/
+                
+        function changeHeader() {
+            let header = document.getElementById("headerText");
+            let originalText = "INST377 - Lab 4";
+            let newText = "INST377 - Lab 4 - Adding Text";
+            header.innerHTML = "<h1>INST377 - Lab 4 - Adding Text</h1>";
+
+            if(header.innerHTML === originalText){
+                header.innerHTML = newText;
+            }
+        }
+
+     /*Javascript Code for Box 4*/
+     
+        function formValidation() {
+            console.log('Validating user input:', document.contactForm2.firstName2.value)
+            const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if (document.contactForm2.firstName2.value.trim() == "") {
+                alert('Enter a valid first name!');
+
+                return false;
+            }
+
+            if (validationRegex.test(document.contactForm2.firstName2.value)) {
+                alert('Special characters are not allowed in field!');
+
+                return false;
+            }
+
+            return true;
+
+        }
+    </script>
+
+</body>
+
+</html>
